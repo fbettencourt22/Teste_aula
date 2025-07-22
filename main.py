@@ -2,9 +2,15 @@ import datetime
 
 nome: str = input("Qual é o seu nome? ")
 i: str = input("Qual é a tua data de nascimento (no formato DD/MM/AAAA)? ")
+
 data_nascimento = datetime.datetime.strptime(i, "%d/%m/%Y")
+
 data_hoje = datetime.datetime.now()
+
 idade = data_hoje.year - data_nascimento.year
+
+if (data_hoje.month, data_hoje.day) < (data_nascimento.month, data_nascimento.day):
+    idade -= 1
 
 def welcome():           
     if idade > 130:
