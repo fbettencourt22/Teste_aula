@@ -1,7 +1,7 @@
 import datetime
 
 nome: str = input("Qual é o seu nome? ")
-i: int = input("Qual é a tua data de nascimento (no formato DD/MM/AAAA) ?  ")
+i: str = input("Qual é a tua data de nascimento (no formato DD/MM/AAAA)? ")
 data_nascimento = datetime.datetime.strptime(i, "%d/%m/%Y")
 data_hoje = datetime.datetime.now()
 idade = data_hoje.year - data_nascimento.year
@@ -12,5 +12,13 @@ def welcome():
     else:    
         print(f"Olá, {nome}, a tua idade é {idade}!")
 
-welcome()
-    
+
+
+def entrar():
+    welcome()
+    if idade >= 18:
+        print(f"Como tens {idade}, podes entrar na discoteca. ")
+    else:
+        print(f"Como tens {idade}, não podes entrar na discoteca. ")
+
+entrar()
